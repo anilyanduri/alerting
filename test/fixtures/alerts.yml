@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  delay: 
+  description: MyString
+  expiery_at: 2018-10-25 17:11:36
+  status: MyString
+  completed_at: MyString
+
+two:
+  delay: 
+  description: MyString
+  expiery_at: 2018-10-25 17:11:36
+  status: MyString
+  completed_at: MyString
