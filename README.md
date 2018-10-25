@@ -20,6 +20,6 @@ Things you may want to cover:
   - `rake test`
 
 * Deployment instructions
-  - `checkout the code make sure u have the above stated ruby and`
-  - `bundle install`
-  - `run rails s -p <portno>`
+  - `checkout the code make sure you have the above stated ruby`
+  - run `bundle install`
+  - run `rails s -p <portno>`
