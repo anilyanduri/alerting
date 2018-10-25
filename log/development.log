@@ -42,3 +42,866 @@ Migrating to CreateAlerts (20181025114136)
   ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (232.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "alerting_development"[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (213.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "alerting_test"[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (362.7ms)[0m  [1m[35mCREATE DATABASE "alerting_development" ENCODING = 'unicode'[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (407.8ms)[0m  [1m[35mCREATE DATABASE "alerting_test" ENCODING = 'unicode'[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5069983090186698600)[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+Migrating to CreateAlerts (20181025114136)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "alerts" ("id" bigserial primary key, "delay" integer, "reference_no" character varying, "description" character varying, "expiery_at" time, "status" character varying, "completed_at" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181025114136_create_alerts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181025114136"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-25 12:09:22.391617"], ["updated_at", "2018-10-25 12:09:22.391617"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5069983090186698600)[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (170.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "alerting_development"[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (223.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "alerting_test"[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (498.3ms)[0m  [1m[35mCREATE DATABASE "alerting_development" ENCODING = 'unicode'[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (508.4ms)[0m  [1m[35mCREATE DATABASE "alerting_test" ENCODING = 'unicode'[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5069983090186698600)[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+Migrating to CreateAlerts (20181025114136)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "alerts" ("id" bigserial primary key, "delay" integer, "reference_id" character varying, "description" character varying, "expiery_at" time, "status" character varying, "completed_at" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181025114136_create_alerts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181025114136"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-25 12:10:35.647369"], ["updated_at", "2018-10-25 12:10:35.647369"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5069983090186698600)[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+In validate_data method {:alert=>{"a"=>"q"}}
+In validate_data method {"alert"=>{"a"=>"q"}}
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAlert Create (2.7ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:20:29.384736"], ["status", "[\"INITLIZED\", \"COMPLETED\"]"], ["created_at", "2018-10-25 12:19:29.430459"], ["updated_at", "2018-10-25 12:19:29.430459"]]
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:51:15 +0530
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/anily/playground/poc/alerting/app/controllers/application_controller.rb:8: syntax error, unexpected '}', expecting =>
+ {staus: 500, "#{ex.message}"}, status: 500
+                              ^):
+  
+app/controllers/application_controller.rb:8: syntax error, unexpected '}', expecting =>
+app/controllers/alerts_controller.rb:1:in `<main>'
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:52:12 +0530
+Processing by AlertsController#create as */*
+HTTP Origin header (moz-extension://9a161761-89c1-3e4d-97cd-e89aea304ee6) didn't match request.base_url (http://localhost:3000)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:53:00 +0530
+Processing by AlertsController#create as */*
+Completed 500 Internal Server Error in 228ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:53:32 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert_params"=>{"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}}
+Completed 500 Internal Server Error in 9ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:54:06 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[36mAlert Create (0.7ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:25:06.142235"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:24:06.162454"], ["updated_at", "2018-10-25 12:24:06.162454"]]
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+Completed 500 Internal Server Error in 168ms (Views: 0.3ms | ActiveRecord: 11.9ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:54:45 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[36mAlert Create (0.4ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:25:45.641428"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:24:45.664983"], ["updated_at", "2018-10-25 12:24:45.664983"]]
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+Completed 201 Created in 33ms (Views: 0.2ms | ActiveRecord: 8.5ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:55:01 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[36mAlert Create (0.4ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:26:01.873108"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:25:01.899794"], ["updated_at", "2018-10-25 12:25:01.899794"]]
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+Completed 500 Internal Server Error in 156ms (Views: 0.2ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:55:35 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[36mAlert Create (1.1ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:26:35.765792"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:25:35.784998"], ["updated_at", "2018-10-25 12:25:35.784998"]]
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+Completed 500 Internal Server Error in 207ms (Views: 0.3ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:56:38 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[36mAlert Create (0.4ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:27:38.853575"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:26:38.871041"], ["updated_at", "2018-10-25 12:26:38.871041"]]
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+Completed 201 Created in 35ms (ActiveRecord: 7.3ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:58:27 +0530
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[36mAlert Create (0.4ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:29:27.241141"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:28:27.242247"], ["updated_at", "2018-10-25 12:28:27.242247"]]
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+Completed 201 Created in 5ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:58:29 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[36mAlert Create (0.8ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:29:29.526565"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:28:29.528431"], ["updated_at", "2018-10-25 12:28:29.528431"]]
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+Completed 201 Created in 7ms (ActiveRecord: 1.6ms)
+
+
+  [1m[35m (7563.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "alerting_development"[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:58:30 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[36mAlert Create (0.4ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:29:30.541364"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:28:30.542404"], ["updated_at", "2018-10-25 12:28:30.542404"]]
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+Completed 201 Created in 6ms (ActiveRecord: 2.5ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:58:31 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[36mAlert Create (0.4ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:29:31.187689"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:28:31.188652"], ["updated_at", "2018-10-25 12:28:31.188652"]]
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+Completed 201 Created in 5ms (ActiveRecord: 2.2ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:58:31 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[36mAlert Create (0.6ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:29:31.695962"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:28:31.697327"], ["updated_at", "2018-10-25 12:28:31.697327"]]
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+Completed 201 Created in 8ms (ActiveRecord: 3.0ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:58:32 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[36mAlert Create (0.3ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:29:32.127268"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:28:32.128273"], ["updated_at", "2018-10-25 12:28:32.128273"]]
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+Completed 201 Created in 6ms (ActiveRecord: 2.2ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:58:43 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[36mAlert Create (0.4ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:29:43.799733"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:28:43.827377"], ["updated_at", "2018-10-25 12:28:43.827377"]]
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+Completed 201 Created in 44ms (ActiveRecord: 14.7ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:58:44 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[36mAlert Create (1.5ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:29:44.735821"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:28:44.737002"], ["updated_at", "2018-10-25 12:28:44.737002"]]
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+Completed 201 Created in 9ms (ActiveRecord: 3.4ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:58:45 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[36mAlert Create (0.3ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:29:45.183838"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:28:45.184803"], ["updated_at", "2018-10-25 12:28:45.184803"]]
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+Completed 201 Created in 6ms (ActiveRecord: 1.3ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:58:45 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[36mAlert Create (0.5ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:29:45.353699"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:28:45.355020"], ["updated_at", "2018-10-25 12:28:45.355020"]]
+  ↳ app/services/use_case/alerts/create.rb:22
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:22
+Completed 201 Created in 6ms (ActiveRecord: 1.1ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:59:06 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (0.4ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:30:06.350376"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:29:06.369821"], ["updated_at", "2018-10-25 12:29:06.369821"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 201 Created in 33ms (ActiveRecord: 6.5ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:59:06 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (0.3ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:30:06.988114"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:29:06.989092"], ["updated_at", "2018-10-25 12:29:06.989092"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 201 Created in 5ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:59:07 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (0.3ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:30:07.148979"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:29:07.150774"], ["updated_at", "2018-10-25 12:29:07.150774"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 201 Created in 6ms (ActiveRecord: 1.1ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:59:07 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (0.3ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:30:07.315760"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:29:07.316650"], ["updated_at", "2018-10-25 12:29:07.316650"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 201 Created in 5ms (ActiveRecord: 2.1ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:59:07 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (0.3ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:30:07.476404"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:29:07.477182"], ["updated_at", "2018-10-25 12:29:07.477182"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 201 Created in 6ms (ActiveRecord: 3.3ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (221.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "alerting_development"[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (226.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "alerting_test"[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (452.1ms)[0m  [1m[35mCREATE DATABASE "alerting_development" ENCODING = 'unicode'[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (472.9ms)[0m  [1m[35mCREATE DATABASE "alerting_test" ENCODING = 'unicode'[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5069983090186698600)[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+Migrating to CreateAlerts (20181025114136)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "alerts" ("id" bigserial primary key, "delay" integer, "reference_id" character varying, "description" character varying, "expiery_at" time, "status" character varying, "completed_at" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181025114136_create_alerts.rb:3
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_alerts_on_reference_id" ON "alerts"  ("reference_id")[0m
+  ↳ db/migrate/20181025114136_create_alerts.rb:13
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181025114136"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-25 12:29:20.122278"], ["updated_at", "2018-10-25 12:29:20.122278"]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5069983090186698600)[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:59:26 +0530
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (2.3ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:30:27.124238"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:29:27.142651"], ["updated_at", "2018-10-25 12:29:27.142651"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 201 Created in 44ms (ActiveRecord: 11.4ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:59:28 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (2.2ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:30:28.070270"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:29:28.071363"], ["updated_at", "2018-10-25 12:29:28.071363"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 500 Internal Server Error in 7ms (Views: 0.4ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:59:39 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_2", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (0.5ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_2"], ["description", "Transcription not yet started"], ["expiery_at", "12:30:39.185244"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:29:39.186395"], ["updated_at", "2018-10-25 12:29:39.186395"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 201 Created in 5ms (ActiveRecord: 1.3ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 17:59:44 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_2", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (1.0ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_2"], ["description", "Transcription not yet started"], ["expiery_at", "12:30:44.694196"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:29:44.695157"], ["updated_at", "2018-10-25 12:29:44.695157"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 500 Internal Server Error in 5ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 18:00:32 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_2", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (1.0ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_2"], ["description", "Transcription not yet started"], ["expiery_at", "12:31:42.477379"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:30:42.496297"], ["updated_at", "2018-10-25 12:30:42.496297"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 500 Internal Server Error in 31ms (Views: 0.6ms | ActiveRecord: 9.3ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:11:in `rescue in create'
+app/controllers/application_controller.rb:5:in `create'
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 18:01:17 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_2", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (2.8ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_2"], ["description", "Transcription not yet started"], ["expiery_at", "12:32:17.111236"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:31:17.132911"], ["updated_at", "2018-10-25 12:31:17.132911"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 400 Bad Request in 39ms (Views: 0.3ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 18:01:21 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_3", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (0.3ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_3"], ["description", "Transcription not yet started"], ["expiery_at", "12:32:21.146124"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:31:21.147196"], ["updated_at", "2018-10-25 12:31:21.147196"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 201 Created in 4ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 18:01:30 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_3", "description"=>"Transcription not yet started"}}
+Completed 500 Internal Server Error in 6ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 18:01:42 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_3", "description"=>"Transcription not yet started"}}
+Completed 400 Bad Request in 5ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 18:01:55 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (0.8ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "12:32:55.103691"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:31:55.116545"], ["updated_at", "2018-10-25 12:31:55.116545"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 400 Bad Request in 29ms (Views: 0.2ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 18:01:59 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_10", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (0.3ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_10"], ["description", "Transcription not yet started"], ["expiery_at", "12:32:59.204179"], ["status", "INITLIZED"], ["created_at", "2018-10-25 12:31:59.205165"], ["updated_at", "2018-10-25 12:31:59.205165"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 201 Created in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/alerts" for 127.0.0.1 at 2018-10-25 18:21:18 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by AlertsController#list as HTML
+  [1m[36mAlert Load (0.6ms)[0m  [1m[34mSELECT  "alerts".* FROM "alerts" WHERE "alerts"."status" = $1 LIMIT $2[0m  [["status", "INITLIZED"], ["LIMIT", 11]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 6.8ms)
+
+
+  
+  [1m[36mAlert Load (0.3ms)[0m  [1m[34mSELECT  "alerts".* FROM "alerts" WHERE "alerts"."status" = $1 LIMIT $2[0m  [["status", "INITLIZED"], ["LIMIT", 11]]
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+NoMethodError (undefined method `decorate' for #<Alert::ActiveRecord_Relation:0x007fbe4ebaa0b8>
+Did you mean?  create):
+  
+app/services/use_case/alerts/list.rb:17:in `get_alerts'
+app/services/use_case/alerts/list.rb:11:in `call'
+app/controllers/application_controller.rb:15:in `list'
+Started GET "/alerts" for 127.0.0.1 at 2018-10-25 18:21:38 +0530
+Processing by AlertsController#list as HTML
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 5.9ms)
+
+
+  
+NoMethodError (undefined method `alert=' for #<UseCase::Alerts::List:0x007fbe4e527a10>
+Did you mean?  alerts=
+               alerts):
+  
+app/services/use_case/alerts/list.rb:17:in `get_alerts'
+app/services/use_case/alerts/list.rb:11:in `call'
+app/controllers/application_controller.rb:15:in `list'
+Started GET "/alerts" for 127.0.0.1 at 2018-10-25 18:21:58 +0530
+Processing by AlertsController#list as HTML
+  [1m[36mAlert Load (1.1ms)[0m  [1m[34mSELECT "alerts".* FROM "alerts" WHERE "alerts"."status" = $1[0m  [["status", "INITLIZED"]]
+  ↳ app/services/use_case/alerts/list.rb:21
+Completed 200 OK in 43ms (Views: 0.7ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/alerts" for 127.0.0.1 at 2018-10-25 18:22:00 +0530
+Processing by AlertsController#list as HTML
+  [1m[36mAlert Load (0.3ms)[0m  [1m[34mSELECT "alerts".* FROM "alerts" WHERE "alerts"."status" = $1[0m  [["status", "INITLIZED"]]
+  ↳ app/services/use_case/alerts/list.rb:21
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/alerts/transcription_start_10" for 127.0.0.1 at 2018-10-25 18:35:13 +0530
+Processing by AlertsController#update as */*
+  Parameters: {"reference_id"=>"transcription_start_10"}
+Completed 400 Bad Request in 5ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/alerts/transcription_start_10" for 127.0.0.1 at 2018-10-25 18:35:30 +0530
+Processing by AlertsController#update as */*
+  Parameters: {"reference_id"=>"transcription_start_10"}
+Completed 400 Bad Request in 20ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/alerts/transcription_start_10" for 127.0.0.1 at 2018-10-25 18:36:06 +0530
+Processing by AlertsController#update as */*
+  Parameters: {"reference_id"=>"transcription_start_10"}
+Completed 500 Internal Server Error in 804ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `e' for #<AlertsController:0x007fbe4ebd4c28>
+Did you mean?  ex):
+  
+app/controllers/application_controller.rb:24:in `rescue in update'
+app/controllers/application_controller.rb:20:in `update'
+Started PUT "/alerts/transcription_start_10" for 127.0.0.1 at 2018-10-25 18:36:16 +0530
+Processing by AlertsController#update as */*
+  Parameters: {"reference_id"=>"transcription_start_10"}
+Completed 400 Bad Request in 18ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/alerts/transcription_start_10" for 127.0.0.1 at 2018-10-25 18:36:35 +0530
+Processing by AlertsController#update as */*
+  Parameters: {"reference_id"=>"transcription_start_10"}
+  [1m[36mAlert Load (1.4ms)[0m  [1m[34mSELECT  "alerts".* FROM "alerts" WHERE "alerts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/services/use_case/alerts/update_status.rb:16
+Completed 400 Bad Request in 86ms (Views: 2.6ms | ActiveRecord: 52.6ms)
+
+
+Started PUT "/alerts/transcription_start_10" for 127.0.0.1 at 2018-10-25 18:36:47 +0530
+Processing by AlertsController#update as */*
+  Parameters: {"reference_id"=>"transcription_start_10"}
+  [1m[36mAlert Load (0.8ms)[0m  [1m[34mSELECT  "alerts".* FROM "alerts" WHERE "alerts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/services/use_case/alerts/update_status.rb:16
+Completed 400 Bad Request in 75ms (Views: 2.5ms | ActiveRecord: 28.4ms)
+
+
+Started PUT "/alerts/transcription_start_10" for 127.0.0.1 at 2018-10-25 18:40:10 +0530
+Processing by AlertsController#update as */*
+  Parameters: {"reference_id"=>"transcription_start_10"}
+  [1m[36mAlert Load (0.9ms)[0m  [1m[34mSELECT  "alerts".* FROM "alerts" WHERE "alerts"."reference_id" = $1 LIMIT $2[0m  [["reference_id", "transcription_start_10"], ["LIMIT", 1]]
+  ↳ app/services/use_case/alerts/update_status.rb:17
+Completed 400 Bad Request in 82ms (Views: 1.3ms | ActiveRecord: 12.9ms)
+
+
+Started PUT "/alerts/transcription_start_10" for 127.0.0.1 at 2018-10-25 18:40:24 +0530
+Processing by AlertsController#update as */*
+  Parameters: {"reference_id"=>"transcription_start_10"}
+  [1m[36mAlert Load (2.1ms)[0m  [1m[34mSELECT  "alerts".* FROM "alerts" WHERE "alerts"."reference_id" = $1 LIMIT $2[0m  [["reference_id", "transcription_start_10"], ["LIMIT", 1]]
+  ↳ app/services/use_case/alerts/update_status.rb:17
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/update_status.rb:22
+  [1m[36mAlert Update (3.4ms)[0m  [1m[33mUPDATE "alerts" SET "status" = $1, "updated_at" = $2 WHERE "alerts"."id" = $3[0m  [["status", "COMPLETED"], ["updated_at", "2018-10-25 13:10:25.081202"], ["id", 9]]
+  ↳ app/services/use_case/alerts/update_status.rb:22
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/update_status.rb:22
+Completed 204 No Content in 223ms (ActiveRecord: 131.9ms)
+
+
+Started PUT "/alerts/transcription_start_10" for 127.0.0.1 at 2018-10-25 18:40:27 +0530
+Processing by AlertsController#update as */*
+  Parameters: {"reference_id"=>"transcription_start_10"}
+  [1m[36mAlert Load (0.6ms)[0m  [1m[34mSELECT  "alerts".* FROM "alerts" WHERE "alerts"."reference_id" = $1 LIMIT $2[0m  [["reference_id", "transcription_start_10"], ["LIMIT", 1]]
+  ↳ app/services/use_case/alerts/update_status.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/update_status.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/update_status.rb:22
+Completed 204 No Content in 8ms (ActiveRecord: 1.3ms)
+
+
+Started PUT "/alerts/transcription_start_101" for 127.0.0.1 at 2018-10-25 18:40:29 +0530
+Processing by AlertsController#update as */*
+  Parameters: {"reference_id"=>"transcription_start_101"}
+  [1m[36mAlert Load (0.8ms)[0m  [1m[34mSELECT  "alerts".* FROM "alerts" WHERE "alerts"."reference_id" = $1 LIMIT $2[0m  [["reference_id", "transcription_start_101"], ["LIMIT", 1]]
+  ↳ app/services/use_case/alerts/update_status.rb:17
+Completed 400 Bad Request in 5ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/alerts/transcription_start_101" for 127.0.0.1 at 2018-10-25 18:40:43 +0530
+Processing by AlertsController#update as */*
+  Parameters: {"reference_id"=>"transcription_start_101"}
+  [1m[36mAlert Load (1.0ms)[0m  [1m[34mSELECT  "alerts".* FROM "alerts" WHERE "alerts"."reference_id" = $1 LIMIT $2[0m  [["reference_id", "transcription_start_101"], ["LIMIT", 1]]
+  ↳ app/services/use_case/alerts/update_status.rb:17
+Completed 400 Bad Request in 70ms (Views: 1.0ms | ActiveRecord: 6.1ms)
+
+
+Started PUT "/alerts/transcription_start_10" for 127.0.0.1 at 2018-10-25 18:40:46 +0530
+Processing by AlertsController#update as */*
+  Parameters: {"reference_id"=>"transcription_start_10"}
+  [1m[36mAlert Load (0.7ms)[0m  [1m[34mSELECT  "alerts".* FROM "alerts" WHERE "alerts"."reference_id" = $1 LIMIT $2[0m  [["reference_id", "transcription_start_10"], ["LIMIT", 1]]
+  ↳ app/services/use_case/alerts/update_status.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/update_status.rb:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/update_status.rb:22
+Completed 204 No Content in 36ms (ActiveRecord: 5.6ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 18:40:53 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_1", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (17.9ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_1"], ["description", "Transcription not yet started"], ["expiery_at", "13:11:53.391879"], ["status", "INITLIZED"], ["created_at", "2018-10-25 13:10:53.395221"], ["updated_at", "2018-10-25 13:10:53.395221"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (7.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 400 Bad Request in 51ms (Views: 0.7ms | ActiveRecord: 26.0ms)
+
+
+Started POST "/alerts" for 127.0.0.1 at 2018-10-25 18:40:56 +0530
+Processing by AlertsController#create as */*
+In validate_data method {"alert"=>{"reference_id"=>"transcription_start_12", "delay"=>60, "description"=>"Transcription not yet started"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[36mAlert Create (1.9ms)[0m  [1m[32mINSERT INTO "alerts" ("delay", "reference_id", "description", "expiery_at", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["delay", 60], ["reference_id", "transcription_start_12"], ["description", "Transcription not yet started"], ["expiery_at", "13:11:56.815930"], ["status", "INITLIZED"], ["created_at", "2018-10-25 13:10:56.818253"], ["updated_at", "2018-10-25 13:10:56.818253"]]
+  ↳ app/services/use_case/alerts/create.rb:29
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/create.rb:29
+Completed 201 Created in 13ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/alerts" for 127.0.0.1 at 2018-10-25 18:41:07 +0530
+Processing by AlertsController#list as */*
+  [1m[36mAlert Load (1.0ms)[0m  [1m[34mSELECT "alerts".* FROM "alerts" WHERE "alerts"."status" = $1[0m  [["status", "INITLIZED"]]
+  ↳ app/services/use_case/alerts/list.rb:21
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/alerts" for 127.0.0.1 at 2018-10-25 18:41:09 +0530
+Processing by AlertsController#list as */*
+  [1m[36mAlert Load (1.1ms)[0m  [1m[34mSELECT "alerts".* FROM "alerts" WHERE "alerts"."status" = $1[0m  [["status", "INITLIZED"]]
+  ↳ app/services/use_case/alerts/list.rb:21
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.1ms)
+
+
+Started PUT "/alerts/transcription_start_12" for 127.0.0.1 at 2018-10-25 18:41:17 +0530
+Processing by AlertsController#update as */*
+  Parameters: {"reference_id"=>"transcription_start_12"}
+  [1m[36mAlert Load (0.5ms)[0m  [1m[34mSELECT  "alerts".* FROM "alerts" WHERE "alerts"."reference_id" = $1 LIMIT $2[0m  [["reference_id", "transcription_start_12"], ["LIMIT", 1]]
+  ↳ app/services/use_case/alerts/update_status.rb:17
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/update_status.rb:22
+  [1m[36mAlert Update (2.7ms)[0m  [1m[33mUPDATE "alerts" SET "status" = $1, "updated_at" = $2 WHERE "alerts"."id" = $3[0m  [["status", "COMPLETED"], ["updated_at", "2018-10-25 13:11:17.033429"], ["id", 11]]
+  ↳ app/services/use_case/alerts/update_status.rb:22
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/update_status.rb:22
+Completed 204 No Content in 17ms (ActiveRecord: 4.5ms)
+
+
+Started PUT "/alerts/transcription_start_12" for 127.0.0.1 at 2018-10-25 18:41:18 +0530
+Processing by AlertsController#update as */*
+  Parameters: {"reference_id"=>"transcription_start_12"}
+  [1m[36mAlert Load (1.1ms)[0m  [1m[34mSELECT  "alerts".* FROM "alerts" WHERE "alerts"."reference_id" = $1 LIMIT $2[0m  [["reference_id", "transcription_start_12"], ["LIMIT", 1]]
+  ↳ app/services/use_case/alerts/update_status.rb:17
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/use_case/alerts/update_status.rb:22
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/use_case/alerts/update_status.rb:22
+Completed 204 No Content in 12ms (ActiveRecord: 2.6ms)
+
+
+Started PUT "/alerts/transcription_start_13" for 127.0.0.1 at 2018-10-25 18:41:24 +0530
+Processing by AlertsController#update as */*
+  Parameters: {"reference_id"=>"transcription_start_13"}
+  [1m[36mAlert Load (0.5ms)[0m  [1m[34mSELECT  "alerts".* FROM "alerts" WHERE "alerts"."reference_id" = $1 LIMIT $2[0m  [["reference_id", "transcription_start_13"], ["LIMIT", 1]]
+  ↳ app/services/use_case/alerts/update_status.rb:17
+Completed 400 Bad Request in 4ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+

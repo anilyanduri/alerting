@@ -17,12 +17,14 @@ ActiveRecord::Schema.define(version: 2018_10_25_114136) do
 
   create_table "alerts", force: :cascade do |t|
     t.integer "delay"
+    t.string "reference_id"
     t.string "description"
     t.time "expiery_at"
     t.string "status"
     t.string "completed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["reference_id"], name: "index_alerts_on_reference_id", unique: true
   end
 
 end
