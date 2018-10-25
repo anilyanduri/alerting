@@ -1,0 +1,4 @@
+  [1m[35m (587.5ms)[0m  [1m[35mCREATE DATABASE "alerting_development" ENCODING = 'unicode'[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
+  [1m[35m (428.2ms)[0m  [1m[35mCREATE DATABASE "alerting_test" ENCODING = 'unicode'[0m
+  ↳ /Users/anily/.rvm/gems/ruby-2.4.0/bin/rake:22
